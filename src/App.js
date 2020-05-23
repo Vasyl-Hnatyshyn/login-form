@@ -32,7 +32,12 @@ authListener = ()=>{
                     this.setState({user: null})
                  }
         })
-}    
+}
+
+
+
+
+
     
     render() {
         

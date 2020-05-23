@@ -12,8 +12,7 @@ class Login extends React.Component {
             border: "2px solid transparent",
             errMessage:{
                 display:"none",
-                
-            }
+                           }
              
         }
     }
@@ -89,7 +88,7 @@ render(){
               id="email" 
               value={this.state.email}
                style={{border:this.state.border} }
-               onChange={this.inputChanges} / >
+               onChange={this.inputChanges} />
                 
             <input 
               name = "password"
@@ -98,7 +97,7 @@ render(){
               id="password"
               style={{border:this.state.border} }
               onChange={this.inputChanges}
-               value={this.state.password}/ >
+               value={this.state.password}/>
               
               <p id ="errLogin" style={this.state.errMessage}>  Your email or password is incorect !!!</p>
                 

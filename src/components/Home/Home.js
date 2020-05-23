@@ -10,23 +10,28 @@ class Home extends React.Component {
         this.state={
             author:null,
             PasswordData:{
-                user:" ",
+                user:"",
                 newPassword: " " ,
-                confirmPassword:" "
-            }
+          }
    
     };
  }
 
     
 componentDidMount () {
-    const userEmail = localStorage.getItem('name'); 
+    const userEmail = localStorage.getItem('name');
+
     const user = userEmail ? userEmail.slice(0, userEmail.indexOf('@')) : ''
      this.setState({ 
       author: user,
+
      });
 
      }
+
+
+
+
 
     logOut = () => {
 
@@ -35,12 +40,14 @@ componentDidMount () {
         });
 
         localStorage.setItem('name',null)
+
     };
 
 
 
 
     newPasswordData=(e)=>{
+
         let a =this.state.PasswordData;
         a[e.target.id]= e.target.value;
 
@@ -48,8 +55,29 @@ componentDidMount () {
             PasswordData:a
         })
 
+        console.log( this.state.PasswordData)
         // this.inputAreEmpty();
+    }
 
+    changePassword=()=>{
+        let   user = fire.auth().currentUser;
+        user.updatePassword(this.state.PasswordData.newPassword).then(function() {
+            alert(" Update successful.")
+        }).catch(function(error) {
+            // An error happened.
+        });
+
+    }
+
+
+    changeEmail=()=>{
+        let   user = fire.auth().currentUser;
+
+        user.updateEmail(this.state.PasswordData.user).then(function() {
+            alert(" Update successful.")
+        }).catch(function(error) {
+            // An error happened.
+        });
     }
 
 
@@ -71,15 +99,16 @@ render(){
 
          </div>
          <div className="change-window">
-             <label htmlFor="user"> User</label>
-             <input type="text" id="user" onChange={this.newPasswordData}/>
+             <label htmlFor="user" > User</label>
+             <input type="text" id="user" value={this.state.PasswordData.user} onChange={this.newPasswordData}/>
 
              <label htmlFor="user" > New password</label>
-             <input type="text" onChange={this.newPasswordData}/>
+             <input type="text" id="newPassword" onChange={this.newPasswordData}/>
 
              <label htmlFor="user" > Confirm new password</label>
-             <input type="text" onChange={this.newPasswordData}/>
-             <button> Change</button>
+             <input type="text"  onChange={this.newPasswordData}/>
+             <button  onClick={this.changeEmail}> Change Email </button>
+             <button  onClick={this.changePassword}> Change Password</button>
 
 
          </div>
