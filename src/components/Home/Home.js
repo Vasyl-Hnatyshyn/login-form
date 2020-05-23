@@ -9,6 +9,11 @@ class Home extends React.Component {
         
         this.state={
             author:null,
+            PasswordData:{
+                user:" ",
+                newPassword: " " ,
+                confirmPassword:" "
+            }
    
     };
  }
@@ -33,6 +38,22 @@ componentDidMount () {
     };
 
 
+
+
+    newPasswordData=(e)=>{
+        let a =this.state.PasswordData;
+        a[e.target.id]= e.target.value;
+
+        this.setState({
+            PasswordData:a
+        })
+
+        // this.inputAreEmpty();
+
+    }
+
+
+
 render(){
 
     return (
@@ -41,7 +62,7 @@ render(){
          <div className="userBlock">
 
 
-             <div > Current user : {this.state.author}  </div>
+             <div > Current user : <span id="curr-user">{this.state.author}</span>  </div>
              <button onClick={this.logOut}> Log out  </button>
              <button onClick={this.logOut}> Change password  </button>
 
@@ -51,13 +72,13 @@ render(){
          </div>
          <div className="change-window">
              <label htmlFor="user"> User</label>
-             <input type="text" id="user"/>
+             <input type="text" id="user" onChange={this.newPasswordData}/>
 
-             <label htmlFor="user"> New password</label>
-             <input type="text"/>
+             <label htmlFor="user" > New password</label>
+             <input type="text" onChange={this.newPasswordData}/>
 
-             <label htmlFor="user"> Confirm new password</label>
-             <input type="text"/>
+             <label htmlFor="user" > Confirm new password</label>
+             <input type="text" onChange={this.newPasswordData}/>
              <button> Change</button>
 
 
