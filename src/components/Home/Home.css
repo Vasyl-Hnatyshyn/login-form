@@ -1,0 +1,89 @@
+
+#container{
+    display: flex;
+    border: 2px solid black;
+    margin: 20px auto;
+    width: 95%;
+    min-height: 300px;
+}
+
+
+.userBlock{
+    padding: 25px 30px  100px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 30%;
+    border-right: 2px solid black;
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-size: 15px;
+
+
+}
+
+.userBlock button {
+    width: 65%;
+    padding: 8px 8px;
+    background-color: lightgreen;
+    border: 2px solid #2ca02c2b ;
+    border-radius: 15px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    font-size: 14.5px;
+
+
+}
+.change-window {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 25px 40px;
+    width: 28%;
+
+}
+
+.change-window button {
+
+    padding: 5px 20px;
+    background-color: yellow;
+    border: 2px solid #2ca02c2b ;
+    border-radius: 2px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    font-size: 14.5px;
+    margin: 10px auto;
+
+
+}
+
+.change-window  input {
+    width: 100%;
+    height: 30px;
+    border-radius: 2px;
+    border: 2px solid dimgrey;
+
+
+}
+
+label {
+    font-weight: 600;
+    padding: 0 0 0 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
