@@ -61,8 +61,8 @@ const UserBlock=(props)=>{
             <div > E-mail :   <span >  {email}  </span>  </div>
             <div > Password : <span > {password}</span>  </div>
 
-            <Button onClick={show} className={classes.buttons }  > Change Email  </Button>
-            <Button onClick={show} className={classes.buttons} > Change password  </Button>
+            <Button onClick={()=>{show(1)}} className={classes.buttons }  id="email"> Change Email  </Button>
+            <Button onClick={()=>{show(2)}} className={classes.buttons} id="password"> Change password  </Button>
 
             <Button onClick={logOut} className={classes.LogOut} > Log out  </Button>
 

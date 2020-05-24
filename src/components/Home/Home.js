@@ -12,7 +12,7 @@ class Home extends React.Component {
             author:null,
             email:null,
             password:null,
-            showData: 'email',
+            showData: 1,
             PasswordData:{
                 user:"",
                 newPassword: " " ,
@@ -84,11 +84,13 @@ componentDidMount () {
     }
 
 
-    show=()=>{
+    show=id=>{
 
         this.setState({
-            showData:
+            showData:id
             })
+
+        console.log(id)
          }
 
 
@@ -107,7 +109,7 @@ render(){
              author={this.state.author}
              email={this.state.email}
              password={this.state.password}
-             show={this.showData}/>
+             show={this.show}/>
 
 
          <Change

@@ -36,8 +36,8 @@ const Change= (props)=>{
     return (
         <div className="change-window">
 
-            {showData === "email" ? (<div className={classes.emailBlock}>
-
+            {showData === 1 ?
+                (<div className={classes.emailBlock}>
                 <TextField
                     id="user"
                     label="E-mail"
