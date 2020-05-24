@@ -12,7 +12,7 @@ class Login extends React.Component {
             border: "2px solid transparent",
             errMessage:{
                 display:"none",
-                           }
+                 }
              
         }
     }
@@ -69,6 +69,7 @@ inputChanges = (e) => {
     })
     
     localStorage.setItem('name',`${this.state.email}`)
+    localStorage.setItem('key', this.state.password)
 
 }    
     

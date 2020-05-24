@@ -1,39 +1,41 @@
 import React from 'react';
 import './Home.css';
 import fire from "../../config/fire";
-import { Button } from '@material-ui/core';
-
-
+import UserBlock  from './UserBlock/UserBlock';
+import Change  from './Change/Change';
 
 class Home extends React.Component {
     constructor(){
         super();
-        
+
         this.state={
             author:null,
+            email:null,
+            password:null,
+            showData: 'email',
             PasswordData:{
                 user:"",
                 newPassword: " " ,
           }
-   
-    };
- }
+          };
 
-    
+    }
+
+
 componentDidMount () {
     const userEmail = localStorage.getItem('name');
+    const userPassword = localStorage.getItem('key');
 
     const user = userEmail ? userEmail.slice(0, userEmail.indexOf('@')) : ''
      this.setState({ 
       author: user,
+      email:userEmail,
+      password:userPassword,
+
 
      });
 
      }
-
-
-
-
 
     logOut = () => {
 
@@ -58,7 +60,7 @@ componentDidMount () {
         })
 
         console.log( this.state.PasswordData)
-        // this.inputAreEmpty();
+
     }
 
     changePassword=()=>{
@@ -71,7 +73,6 @@ componentDidMount () {
 
     }
 
-
     changeEmail=()=>{
         let   user = fire.auth().currentUser;
 
@@ -83,45 +84,38 @@ componentDidMount () {
     }
 
 
+    show=()=>{
+
+        this.setState({
+            showData:
+            })
+         }
+
+
 
 render(){
 
+
+
     return (
+
         
      <div  id ="container">
-         <div className="userBlock">
+
+         <UserBlock
+             logOut={this.logOut}
+             author={this.state.author}
+             email={this.state.email}
+             password={this.state.password}
+             show={this.showData}/>
 
 
-             <div > Current user : <span id="curr-user">{this.state.author}</span>  </div>
-             <button onClick={this.logOut}> Log out  </button>
-             <button onClick={this.logOut}> Change password  </button>
-
-
-
-
-         </div>
-         <div className="change-window">
-             <label htmlFor="user" > User</label>
-             <input type="text" id="user" value={this.state.PasswordData.user} onChange={this.newPasswordData}/>
-
-             <label htmlFor="user" > New password</label>
-             <input type="text" id="newPassword" onChange={this.newPasswordData}/>
-
-             <label htmlFor="user" > Confirm new password</label>
-             <input type="text"  onChange={this.newPasswordData}/>
-             <button  onClick={this.changeEmail}> Change Email </button>
-             <button  onClick={this.changePassword}> Change Password</button>
-
-
-         </div>
-
-
-         <div id="material">
-
-             <Button variant="contained" color="primary"> this</Button>
-
-         </div>
-
+         <Change
+            changeEmail={this.changeEmail}
+            changePassword={this.changePassword}
+            newPasswordData={this.newPasswordData}
+            showData={this.state.showData}
+            />
 
          </div>)
 
