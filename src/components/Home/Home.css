@@ -102,9 +102,15 @@ label {
 
 }
 
+/*/////////////////////////////////////////////////*/
 
+#material{
 
-
+    height: 300px;
+    width: 30%;
+    border: 2px solid red;
+    padding:20px;
+}
 
 
 

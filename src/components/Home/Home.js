@@ -1,6 +1,8 @@
 import React from 'react';
 import './Home.css';
 import fire from "../../config/fire";
+import { Button } from '@material-ui/core';
+
 
 
 class Home extends React.Component {
@@ -110,6 +112,13 @@ render(){
              <button  onClick={this.changeEmail}> Change Email </button>
              <button  onClick={this.changePassword}> Change Password</button>
 
+
+         </div>
+
+
+         <div id="material">
+
+             <Button variant="contained" color="primary"> this</Button>
 
          </div>
 
