@@ -10,10 +10,12 @@ const useStyles = makeStyles({
     justifyContent: 'space-around',
     alignItems: 'flex-start',
     width: '30%',
-    borderRight: '2px solid black',
+
     fontWeight: '800',
     letterSpacing: '1px',
-    fontSize: '15px'
+    fontSize: '15px',
+    backgroundColor:'rgba(0, 0, 0, 0.5)',
+
      },
 
     buttons: {
@@ -22,11 +24,12 @@ const useStyles = makeStyles({
         },
         width:'65%',
         padding: '8px 8px',
-        backgroundColor: 'lightgreen',
+        backgroundColor: 'yellow',
         border: '2px solid #2ca02c2b ',
-        borderRadius: '2px',
+        borderRadius: '3px',
         fontWeight: '800',
         letterSpacing: '1.2px',
+        fontSize: '12px'
 
 },
     LogOut: {
@@ -36,8 +39,8 @@ const useStyles = makeStyles({
         width:'10%',
         padding: '8px 8px',
         backgroundColor: 'red',
-        border: '2px solid black',
-        borderRadius: '2px',
+        border: '4px solid black',
+        borderRadius: '3px',
         fontWeight: '800',
         letterSpacing: '1.2px',
         position:'absolute',

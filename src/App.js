@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import fire  from './config/fire';
-import Login  from './components/Login/Login';
+import Enter  from './components/Login/Enter';
 import Home  from './components/Home/Home';
 
 
@@ -10,8 +10,8 @@ class App extends React.Component {
        super();
         this.state={
             user:"",
-           
-        }    
+
+        }
     
     }
     
@@ -41,7 +41,7 @@ authListener = ()=>{
         
         <div className = "App">     
         
-        {  this.state.user!== null ? (< Home />):(<Login/>)   }
+        {  this.state.user!== null ? (< Home />):(<Enter/>)   }
         
         </div>
         
